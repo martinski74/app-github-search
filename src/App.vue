@@ -1,6 +1,7 @@
 <template>
-	<div>
+	<div class="app">
 		<NavBar />
+		<router-view></router-view>
 		<Footer />
 	</div>
 </template>
@@ -18,12 +19,11 @@ export default {
 </script>
 
 <style>
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
+.app {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	background-color: #fff;
+	color: #333;
 }
 </style>
