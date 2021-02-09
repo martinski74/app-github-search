@@ -1,4 +1,19 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import BootstrapVue from 'bootstrap-vue/dist/bootstrap-vue.esm';
+import App from './App.vue';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
 
-createApp(App).mount('#app')
+import VueRouter from 'vue-router';
+
+
+
+Vue.use(BootstrapVue);
+Vue.use(VueRouter);
+
+Vue.config.productionTip = false;
+
+new Vue({
+
+	render: (h) => h(App),
+}).$mount('#app');
