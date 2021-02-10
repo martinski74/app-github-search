@@ -8,11 +8,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import UserItem from './UserItem';
 export default {
-	components: {
-		UserItem,
-	},
 	data() {
 		return {};
 	},

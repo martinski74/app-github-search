@@ -6,13 +6,7 @@
 </template>
 
 <script>
-import Search from '../Search';
-
-export default {
-	components: {
-		Search,
-	},
-};
+export default {};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
