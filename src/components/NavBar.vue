@@ -27,5 +27,9 @@
 .navbar-brand {
 	font-size: 24px;
 	font-weight: bold;
+	letter-spacing: 0.1px;
+}
+.navbar {
+	opacity: 0.9;
 }
 </style>

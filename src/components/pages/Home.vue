@@ -1,9 +1,17 @@
 <template>
-	<div>Home page</div>
+	<div>
+		<Search />
+	</div>
 </template>
 
 <script>
-export default {};
+import Search from '../Search';
+
+export default {
+	components: {
+		Search,
+	},
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
