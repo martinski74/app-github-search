@@ -29,13 +29,19 @@ const actions = {
       commit('GET_USERS', res.data.items)
       console.log(res.data.items);
       return res;
+  },
+
+  clearUsers({commit}){
+    commit('CLEAR_USERS')
   }
 };
 
 
 //Mutations
 const mutations ={
-  GET_USERS:(state,users) => state.users = users
+  GET_USERS:(state,users) => state.users = users,
+
+  CLEAR_USERS:(state) => state.users = []
 };
 
 export default {

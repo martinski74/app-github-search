@@ -1,7 +1,10 @@
 <template>
 	<div class="container">
 		<form class="mt-4" @submit.prevent="displayUsers">
-			<b-alert :show="3" variant="secondary"
+			<b-alert
+				@dismissed="dismissCountDown = 0"
+				:show="dismissCountDown"
+				variant="secondary"
 				><i class="fas fa-exclamation-circle mr-1"></i>Please enter search
 				term</b-alert
 			>
@@ -13,26 +16,47 @@
 			/>
 			<input type="submit" value="Search" class="btn btn-dark btn-block" />
 		</form>
-		<button class="btn btn-light btn-block mt-4">Clear</button>
+		<spinner v-if="isLoading"></spinner>
+		<button
+			v-if="users.length > 0"
+			@click="clearUserList"
+			class="btn btn-light btn-block mt-4"
+		>
+			Clear
+		</button>
 	</div>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
+
 export default {
 	data() {
 		return {
 			searchedUser: '',
+			dismissCountDown: 0,
+			isLoading: false,
 		};
 	},
 	computed: {
 		...mapState('users', ['users']),
 	},
 	methods: {
-		...mapActions('users', ['getUsers']),
-		displayUsers() {
-			this.getUsers(this.searchedUser);
-			console.log(this.users);
+		...mapActions('users', ['getUsers', 'clearUsers']),
+		async displayUsers() {
+			if (this.searchedUser) {
+				this.isLoading = true;
+				await this.getUsers(this.searchedUser);
+				this.isLoading = false;
+			} else {
+				this.dismissCountDown = 3;
+			}
+			console.log(this.users.length);
+		},
+
+		clearUserList() {
+			this.clearUsers();
+			this.searchedUser = '';
 		},
 	},
 
@@ -42,7 +66,6 @@ export default {
 
 <style lang="css" scoped>
 .container {
-	max-width: 1100px;
 	margin: auto;
 	overflow: hidden;
 	padding: 0 2rem;

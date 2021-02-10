@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<Search />
+		<Users />
 	</div>
 </template>
 
