@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import VueRouter from 'vue-router';
 import router from './routes';
 import store from './store'
-import spinner from './components/Spinner.vue'
+import spinner from './components/layout/Spinner.vue'
 
 
 Vue.use(BootstrapVue);

@@ -49,7 +49,7 @@ export default {
 				await this.getUsers(this.searchedUser);
 				this.isLoading = false;
 			} else {
-				this.dismissCountDown = 3;
+				this.dismissCountDown = 2;
 			}
 			console.log(this.users.length);
 		},

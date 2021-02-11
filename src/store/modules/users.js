@@ -15,7 +15,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 //State
 const state ={
-  users:[]
+  users:[],
+  user:{}
 };
 
 
@@ -33,6 +34,13 @@ const actions = {
 
   clearUsers({commit}){
     commit('CLEAR_USERS')
+  },
+
+  async getUser({commit}, username){
+    const res = await axios.get(`https://api.github.com/users/${username}?client_id=${githubClientId}&client_secret=${githubClientSecret}`)
+
+    commit('GET_USER', res.data)
+    return res;
   }
 };
 
@@ -41,7 +49,9 @@ const actions = {
 const mutations ={
   GET_USERS:(state,users) => state.users = users,
 
-  CLEAR_USERS:(state) => state.users = []
+  CLEAR_USERS:(state) => state.users = [],
+
+  GET_USER:(state, user) => state.user = user
 };
 
 export default {

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import NavBar from './components/layout/NavBar';
+import Footer from './components/layout/Footer';
 export default {
 	name: 'App',
 	components: {
@@ -26,5 +26,9 @@ export default {
 	line-height: 1.6;
 	background-color: #fff;
 	color: #333;
+	padding-bottom: 35px;
+}
+* {
+	box-sizing: border-box;
 }
 </style>

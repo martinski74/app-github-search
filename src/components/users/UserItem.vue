@@ -3,7 +3,10 @@
 		<img :src="user.avatar_url" alt="avatar" class="round-img" />
 		<h3>{{ user.login }}</h3>
 		<div>
-			<router-link :to="`/user/${user.login}`" class="btn btn-dark btn-sm my-1">
+			<router-link
+				:to="`/users/${user.login}`"
+				class="btn btn-dark btn-sm my-1"
+			>
 				More
 			</router-link>
 		</div>
