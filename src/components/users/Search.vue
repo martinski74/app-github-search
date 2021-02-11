@@ -48,6 +48,7 @@ export default {
 				this.isLoading = true;
 				await this.getUsers(this.searchedUser);
 				this.isLoading = false;
+				this.searchedUser = '';
 			} else {
 				this.dismissCountDown = 2;
 			}
@@ -70,6 +71,11 @@ export default {
 	overflow: hidden;
 	padding: 0 2rem;
 }
+.alert {
+	border-radius: 0;
+	background-color: #f4f4f4;
+	border: none;
+}
 input[type='text'] {
 	display: block;
 	width: 100%;
@@ -79,7 +85,21 @@ input[type='text'] {
 	margin-top: 25px;
 	margin-bottom: 20px;
 }
+.btn-dark:focus {
+	box-shadow: none;
+}
+.btn {
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	border: none;
+	border-radius: 0;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+}
 .btn:hover {
 	opacity: 0.8;
+}
+.btn-light {
+	background-color: #f4f4f4;
 }
 </style>

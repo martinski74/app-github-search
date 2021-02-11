@@ -39,10 +39,24 @@ export default {
 	width: 60px;
 	border-radius: 50%;
 	margin: auto;
+	margin-bottom: 18px;
 }
 .card {
 	padding: 1rem;
 	border: 1px dotted #ccc;
 	margin: 0.7rem 0;
+}
+.btn {
+	border-radius: 0;
+	padding: 0.2rem 1rem;
+}
+.btn:hover {
+	opacity: 0.8;
+	color: #666;
+}
+h3 {
+	margin-bottom: 18px;
+	font-size: 18px;
+	font-weight: bolder;
 }
 </style>

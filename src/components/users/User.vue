@@ -10,7 +10,7 @@
 				<h1 class="heading">{{ user.name }}</h1>
 				<p>{{ user.location }}</p>
 			</div>
-			<div>
+			<div class="mt-1">
 				<h3 v-if="user.bio">Bio</h3>
 				<p v-if="user.bio">{{ user.bio }}</p>
 				<a :href="user.html_url" target="_blanc" class="btn btn-dark my-1"
@@ -64,6 +64,10 @@ export default {
 }
 .heading {
 	font-size: 2rem;
+	font-weight: bolder;
+}
+h3 {
+	font-size: 19px;
 	font-weight: bolder;
 }
 .round-img {
@@ -120,5 +124,18 @@ ul {
 }
 .badge-dark {
 	background-color: #333333;
+}
+.btn {
+	border-radius: 0;
+}
+.btn-dark {
+	padding: 0.4rem 1.3rem;
+}
+.btn-dark:focus {
+	box-shadow: none;
+}
+.btn:hover {
+	opacity: 0.8;
+	color: #666;
 }
 </style>
