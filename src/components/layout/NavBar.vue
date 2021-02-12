@@ -32,5 +32,6 @@
 .navbar {
 	opacity: 0.9;
 	margin-bottom: 1rem;
+	padding: 0.4rem 1rem;
 }
 </style>

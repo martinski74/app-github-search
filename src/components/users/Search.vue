@@ -52,7 +52,6 @@ export default {
 			} else {
 				this.dismissCountDown = 2;
 			}
-			console.log(this.users.length);
 		},
 
 		clearUserList() {
@@ -70,6 +69,7 @@ export default {
 	margin: auto;
 	overflow: hidden;
 	padding: 0 2rem;
+	max-width: 1100px;
 }
 .alert {
 	border-radius: 0;

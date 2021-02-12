@@ -1,9 +1,10 @@
 <template>
 	<div class="container">
-		<router-link to="/" class="btn btn-light">Go Back To Search</router-link>
+		<router-link to="/" class="btn btn-light">Back To Search</router-link>
 		Hireable:
-		<i v-if="user.hireable === true" class="fas fa-check text-success" />
-		<i v-else class="fas fa-times-circle text-danger" />
+		<i v-if="user.hireable" class="fas fa-check text-success" />
+		<i v-else-if="!user.hireable" class="fas fa-times-circle text-danger" />
+		<spinner v-if="isLoading"></spinner>
 		<div class="card grid-2">
 			<div class="all-center">
 				<img :src="user.avatar_url" class="round-img" alt="avatar" />
@@ -33,29 +34,38 @@
 			<div class="badge badge-light">Public Repos: {{ user.public_repos }}</div>
 			<div class="badge badge-dark">Public Gists: {{ user.public_gists }}</div>
 		</div>
+		<Repos :repos="repos" />
 	</div>
 </template>
 <script>
 import { mapActions, mapState } from 'vuex';
 export default {
 	data() {
-		return {};
+		return {
+			isLoading: true,
+		};
 	},
 	computed: {
-		...mapState('users', ['user']),
+		...mapState('users', ['user', 'repos']),
 	},
 	methods: {
-		...mapActions('users', ['getUser']),
+		...mapActions('users', ['getUser', 'getUesrRepos']),
 	},
 
 	async mounted() {
+		this.isLoading = true;
 		await this.getUser(this.$route.params.username);
-		console.log(this.user);
+		await this.getUesrRepos(this.$route.params.username);
+		this.isLoading = false;
+		console.log(this.repos);
 	},
 };
 </script>
 
 <style scoped>
+[v-cloak] {
+	display: none;
+}
 .container {
 	max-width: 1100px;
 	margin: auto;
@@ -100,6 +110,7 @@ ul {
 }
 .badge {
 	font-size: 0.8rem;
+	font-weight: normal;
 	padding: 0.5rem 0.7rem;
 	text-align: center;
 	margin: 0.5rem;
