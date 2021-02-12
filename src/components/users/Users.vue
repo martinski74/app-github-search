@@ -13,7 +13,7 @@ export default {
 		return {};
 	},
 	computed: {
-		...mapState('users', ['users']),
+		...mapState('users', ['users', 'user']),
 	},
 };
 </script>

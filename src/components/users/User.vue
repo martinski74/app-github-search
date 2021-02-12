@@ -3,7 +3,7 @@
 		<router-link to="/" class="btn btn-light">Back To Search</router-link>
 		Hireable:
 		<i v-if="user.hireable" class="fas fa-check text-success" />
-		<i v-else-if="!user.hireable" class="fas fa-times-circle text-danger" />
+		<i v-else class="fas fa-times-circle text-danger" />
 		<spinner v-if="isLoading"></spinner>
 		<div class="card grid-2">
 			<div class="all-center">
@@ -43,6 +43,7 @@ export default {
 	data() {
 		return {
 			isLoading: true,
+			isExist: null,
 		};
 	},
 	computed: {
@@ -52,20 +53,17 @@ export default {
 		...mapActions('users', ['getUser', 'getUesrRepos']),
 	},
 
-	async mounted() {
+	async created() {
 		this.isLoading = true;
-		await this.getUser(this.$route.params.username);
+		this.getUser(this.$route.params.username);
 		await this.getUesrRepos(this.$route.params.username);
 		this.isLoading = false;
-		console.log(this.repos);
+		console.log(this.user);
 	},
 };
 </script>
 
-<style scoped>
-[v-cloak] {
-	display: none;
-}
+<style lang="css" scoped>
 .container {
 	max-width: 1100px;
 	margin: auto;
@@ -132,6 +130,7 @@ ul {
 .badge-light {
 	background-color: #f4f4f4;
 	color: #333 !important;
+	border: 1px solid #ccc;
 }
 .badge-dark {
 	background-color: #333333;

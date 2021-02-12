@@ -30,5 +30,6 @@ a {
 h3 {
 	font-size: 1.17em;
 	font-weight: bold;
+	margin-bottom: 0;
 }
 </style>
