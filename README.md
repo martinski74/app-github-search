@@ -15,3 +15,6 @@ npm run serve
 npm run build
 ```
 
+### Open app here:
+https://github-search-vue.netlify.app/
+
