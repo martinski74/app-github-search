@@ -15,10 +15,6 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Open app here:
+https://github-search-vue.netlify.app/
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
