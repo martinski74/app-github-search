@@ -1,4 +1,4 @@
-# github-search-vue
+# app-github-search
 
 ## Project setup
 ```
