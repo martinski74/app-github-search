@@ -30,7 +30,6 @@ const actions = {
       `https://api.github.com/search/users?q=${text}&client_id=${githubClientId}&client_secret=${githubClientSecret}`)
 
       commit('GET_USERS', res.data.items)
-      console.log(res.data.items);
       return res;
   },
 
