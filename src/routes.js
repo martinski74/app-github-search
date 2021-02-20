@@ -1,8 +1,4 @@
 import VueRouter from 'vue-router';
-import Home from './components/pages/Home.vue';
-import About from './components/pages/About.vue';
-import User from './components/users/User.vue'
-import PageNotFound from './components/pages/PageNotFound.vue';
 
 const router = new VueRouter({
   mode: 'history',
@@ -10,22 +6,22 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: require('./components/pages/Home.vue').default
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: require('./components/pages/About.vue').default
     },
     {
       path: '/users/:username',
       name: 'user',
-      component: User
+      component: require('./components/users/User.vue').default
     },
     {
       path: '*',
       name: 'not-found',
-      component: PageNotFound
+      component: require('./components/pages/PageNotFound.vue').default
     }
   ]
 })

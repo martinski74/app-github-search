@@ -3,10 +3,9 @@
 		<router-link to="/" class="btn btn-light">Back To Search</router-link>
 
 		Hireable:
-		<i v-if="user.hireable" class="fas fa-check text-success" />
+		<i v-if="user.hireable" class="fas fa-check text-success"></i>
 		<i v-else class="fas fa-times-circle text-danger"></i>
 
-		<!-- <i v-else class="fas fa-times-circle text-danger" /> -->
 		<spinner v-if="isLoading"></spinner>
 		<div class="card grid-2">
 			<div class="all-center">
@@ -56,7 +55,7 @@
 			...mapActions('users', ['getUser', 'getUesrRepos']),
 		},
 
-		async created() {
+		async mounted() {
 			this.isLoading = true;
 			try {
 				await this.getUser(this.$route.params.username);

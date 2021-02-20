@@ -28,78 +28,78 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+	import { mapActions, mapState } from 'vuex';
 
-export default {
-	data() {
-		return {
-			searchedUser: '',
-			dismissCountDown: 0,
-			isLoading: false,
-		};
-	},
-	computed: {
-		...mapState('users', ['users']),
-	},
-	methods: {
-		...mapActions('users', ['getUsers', 'clearUsers']),
-		async displayUsers() {
-			if (this.searchedUser) {
-				this.isLoading = true;
-				await this.getUsers(this.searchedUser);
-				this.isLoading = false;
+	export default {
+		data() {
+			return {
+				searchedUser: '',
+				dismissCountDown: 0,
+				isLoading: false,
+			};
+		},
+		computed: {
+			...mapState('users', ['users']),
+		},
+		methods: {
+			...mapActions('users', ['getUsers', 'clearUsers']),
+			async displayUsers() {
+				if (this.searchedUser) {
+					this.isLoading = true;
+					await this.getUsers(this.searchedUser);
+					this.isLoading = false;
+					this.searchedUser = '';
+				} else {
+					this.dismissCountDown = 2;
+				}
+			},
+
+			clearUserList() {
+				this.clearUsers();
 				this.searchedUser = '';
-			} else {
-				this.dismissCountDown = 2;
-			}
+			},
 		},
 
-		clearUserList() {
-			this.clearUsers();
-			this.searchedUser = '';
-		},
-	},
-
-	mounted() {},
-};
+		mounted() {},
+	};
 </script>
 
 <style lang="css" scoped>
-.container {
-	margin: auto;
-	overflow: hidden;
-	padding: 0 2rem;
-	max-width: 1100px;
-}
-.alert {
-	border-radius: 0;
-	background-color: #f4f4f4;
-	border: none;
-}
-input[type='text'] {
-	display: block;
-	width: 100%;
-
-	font-size: 1.2rem;
-	border: 1px solid #ccc;
-	margin-top: 25px;
-	margin-bottom: 20px;
-}
-.btn-dark:focus {
-	box-shadow: none;
-}
-.btn {
-	padding: 0.4rem 1.3rem;
-	font-size: 1rem;
-	border: none;
-	border-radius: 0;
-	transition: opacity 0.2s ease-in;
-	outline: none;
-}
-.btn:hover {
-	opacity: 0.8;
-}
-.btn-light {
-	background-color: #f4f4f4;
-}
+	.container {
+		margin: auto;
+		overflow: hidden;
+		padding: 0 2rem;
+		max-width: 1100px;
+	}
+	.alert {
+		border-radius: 0;
+		background-color: #f4f4f4;
+		border: none;
+	}
+	input[type='text'] {
+		display: block;
+		width: 100%;
+		padding-left: 5px;
+		font-size: 1.2rem;
+		border: 1px solid #ccc;
+		margin-top: 25px;
+		margin-bottom: 20px;
+	}
+	.btn-dark:focus {
+		box-shadow: none;
+	}
+	.btn {
+		padding: 0.4rem 1.3rem;
+		font-size: 1rem;
+		border: none;
+		border-radius: 0;
+		transition: opacity 0.2s ease-in;
+		outline: none;
+	}
+	.btn:hover {
+		opacity: 0.8;
+	}
+	.btn-light {
+		background-color: #f4f4f4;
+	}
 </style>

@@ -1,23 +1,26 @@
 import axios from 'axios';
 
-let githubClientId;
-let githubClientSecret;
+let githubClientId = 'bc4b6f6b1b1dc312122f'
+let githubClientSecret = 'abd121764a00f1d2be068ee5f2d6a6a551eede90'
 
-if (process.env.NODE_ENV !== 'production') {
-	githubClientId = process.env.VUE_APP_GITHUB_CLIENT_ID;
-	githubClientSecret = process.env.VUE_APP_GITHUB_CLIENT_SECRET;
+// let githubClientId;
+// let githubClientSecret;
+
+// if (process.env.NODE_ENV !== 'production') {
+// 	githubClientId = process.env.VUE_APP_GITHUB_CLIENT_ID;
+// 	githubClientSecret = process.env.VUE_APP_GITHUB_CLIENT_SECRET;
 	
-} else {
-	githubClientId = process.env.GITHUB_CLIENT_ID;
-	githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
+// } else {
+// 	githubClientId = process.env.GITHUB_CLIENT_ID;
+// 	githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
 	
-}
+// }
 
 //State
-const state ={
-  users:[],
-  user:{},
-  repos:[]
+const state = {
+  users: [],
+  user: {},
+  repos: []
 };
 
 
