@@ -55,7 +55,7 @@
 			...mapActions('users', ['getUser', 'getUesrRepos']),
 		},
 
-		async mounted() {
+		async created() {
 			this.isLoading = true;
 			try {
 				await this.getUser(this.$route.params.username);
