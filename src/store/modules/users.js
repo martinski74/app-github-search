@@ -6,15 +6,15 @@ let githubClientSecret = 'abd121764a00f1d2be068ee5f2d6a6a551eede90'
 // let githubClientId;
 // let githubClientSecret;
 
-// if (process.env.NODE_ENV !== 'production') {
-// 	githubClientId = process.env.VUE_APP_GITHUB_CLIENT_ID;
-// 	githubClientSecret = process.env.VUE_APP_GITHUB_CLIENT_SECRET;
+if (process.env.NODE_ENV !== 'production') {
+	githubClientId = process.env.VUE_APP_GITHUB_CLIENT_ID;
+	githubClientSecret = process.env.VUE_APP_GITHUB_CLIENT_SECRET;
 	
-// } else {
-// 	githubClientId = process.env.GITHUB_CLIENT_ID;
-// 	githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
+} else {
+	githubClientId = process.env.GITHUB_CLIENT_ID;
+	githubClientSecret = process.env.GITHUB_CLIENT_SECRET;
 	
-// }
+}
 
 //State
 const state = {
