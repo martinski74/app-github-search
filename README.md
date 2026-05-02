@@ -16,5 +16,5 @@ npm run build
 ```
 
 ### Open app here:
-https://github-search-vue.netlify.app/
+https://app-github-search.martin-dobr45.workers.dev
 
