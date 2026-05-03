@@ -16,5 +16,5 @@ npm run build
 ```
 
 ### Open app here:
-https://app-github-search.martin-dobr45.workers.dev
+[Demo](https://app-github-search.pages.dev/)
 
