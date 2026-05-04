@@ -1,5 +1,7 @@
 # app-github-search
 
+A web application built with Vue.js that allows users to search for GitHub profiles, view user details, and browse their repositories. It utilizes the GitHub API to fetch real-time data.
+
 ## Project setup
 ```
 npm install
@@ -16,5 +18,5 @@ npm run build
 ```
 
 ### Open app here:
-https://github-search-vue.netlify.app/
+[Demo](https://app-github-search.pages.dev/)
 
