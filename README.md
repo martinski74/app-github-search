@@ -1,4 +1,4 @@
-<img width="1103" height="517" alt="Capture" src="https://github.com/user-attachments/assets/9e9ac728-3cba-4ebb-8ba9-724947d24a4e" />
+<img width="903" height="500" alt="Capture" src="https://github.com/user-attachments/assets/9e9ac728-3cba-4ebb-8ba9-724947d24a4e" />
 
 # app-github-search
 
