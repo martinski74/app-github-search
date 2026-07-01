@@ -2,11 +2,12 @@
 	<div class="container">
 		<router-link to="/" class="btn btn-light">Back To Search</router-link>
 
-		Hireable:
-		<i v-if="user.hireable" class="fas fa-check text-success"></i>
-		<i v-else class="fas fa-times-circle text-danger"></i>
-
 		<spinner v-if="isLoading"></spinner>
+		<template v-else>
+			Hireable:
+			<i v-if="user.hireable" class="fas fa-check text-success"></i>
+			<i v-else class="fas fa-times-circle text-danger"></i>
+		</template>
 		<div class="card grid-2">
 			<div class="all-center">
 				<img :src="user.avatar_url" class="round-img" alt="avatar" />
